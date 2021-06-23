@@ -17,7 +17,7 @@ app.get('/autonomous', (request, response) => {
 });
 
 app.post('/autonomous', (request, response) => {
-    console.log('I got a request!');
+    console.log('I got a request ');
     const data = request.body;
 
     response.json({
