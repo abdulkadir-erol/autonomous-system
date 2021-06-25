@@ -134,6 +134,7 @@ input[type='submit'] {
     height: 40px;
     width: 250px;
     border-radius: 20px;
+    text-align: center;
     background-color: #3c4753;
     color: #ccc;
 }
@@ -194,7 +195,7 @@ table td {
     color: #fff;
 }
 
-table#jsonTable {
+table {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -302,6 +303,11 @@ input:checked+.slider:before {
     color: #3c4753
 }
 
+.profile.but.empty {
+    background-color: rgb(255, 0, 0);
+    color: #3c4753
+}
+
 
 /* Style the tab content */
 
@@ -351,4 +357,93 @@ input:checked+.slider:before {
     color: #ccc;
     opacity: 0.5;
     transform: scale(1.5);
+}
+
+
+/* Progress Bar */
+
+.progressBar {
+    width: 90%;
+    margin: 10px auto;
+    height: 22px;
+    background-color: #ccc;
+}
+
+.progressBar div {
+    height: 100%;
+    text-align: right;
+    padding: 0 10px;
+    line-height: 22px;
+    /* same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color: #3c4753;
+    box-sizing: border-box;
+}
+
+
+/* Do not take in account */
+
+html {
+    padding-top: 30px
+}
+
+a.solink {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background: #f3f5f6;
+    color: #cfd6d9;
+    border: 1px solid #cfd6d9;
+    line-height: 30px;
+    text-decoration: none;
+    transition: all .3s;
+    z-index: 999
+}
+
+a.solink::first-letter {
+    text-transform: capitalize
+}
+
+a.solink:hover {
+    color: #428bca
+}
+
+
+/* Option */
+
+.box select {
+    background-color: #3c4753;
+    color: white;
+    padding: 3px;
+    width: 200px;
+    border: none;
+    font-size: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #3c4753;
+    pointer-events: none;
+}
+
+.box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #3c4753;
+}
+
+.box select option {
+    padding: 30px;
 }
