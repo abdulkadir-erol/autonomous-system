@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 
@@ -22,7 +23,6 @@ header {
     background: #718398;
     color: white;
     padding: 2rem;
-    text-align: center;
 }
 
 
@@ -57,7 +57,6 @@ p {
 .column {
     float: left;
     padding: 10px;
-    text-align: center;
 }
 
 .left {
@@ -134,9 +133,24 @@ input[type='submit'] {
     height: 40px;
     width: 250px;
     border-radius: 20px;
-    text-align: center;
     background-color: #3c4753;
     color: #ccc;
+}
+
+input[type='text'] {
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    margin-right: 15px;
+    color: #ccc;
+}
+
+input[type='number'] {
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    margin-right: 15px;
+    color: rgb(0, 0, 0);
 }
 
 input[type='radio'] {
@@ -173,7 +187,6 @@ input[type='radio'] {
 }
 
 .error {
-    text-align: center;
     position: relative;
     background: #A40606;
     color: #fff;
@@ -196,7 +209,6 @@ table td {
 }
 
 table {
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
@@ -363,7 +375,7 @@ input:checked+.slider:before {
 /* Progress Bar */
 
 .progressBar {
-    width: 90%;
+    width: 80%;
     margin: 10px auto;
     height: 22px;
     background-color: #ccc;
@@ -391,7 +403,6 @@ a.solink {
     position: fixed;
     top: 0;
     width: 100%;
-    text-align: center;
     background: #f3f5f6;
     color: #cfd6d9;
     border: 1px solid #cfd6d9;
@@ -431,7 +442,6 @@ a.solink:hover {
     right: 0;
     width: 20%;
     height: 100%;
-    text-align: center;
     font-size: 28px;
     line-height: 45px;
     color: rgba(255, 255, 255, 0.5);
