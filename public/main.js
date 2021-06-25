@@ -3,16 +3,10 @@ var progressInterval;
 var timeTotal = 0;
 var profileNum = 1;
 var dataTable = document.createElement('table');
+var setTable = '';
 
 var profiles = new Array(8);
-/* var profile1;
-var profile2;
-var profile3;
-var profile4;
-var profile5;
-var profile6;
-var profile7;
-var profile8; */
+
 profiles = "";
 
 var result = "";
@@ -21,7 +15,7 @@ let setProfileNum = '1';
 let setRowNo = '0';
 let setBeginTime = '00.00';
 let setEndTime = '00.00'
-let setRepeatCount = '1';
+let setRepeat = '1';
 let setMethod = '1';
 let setNextProfile = '0';
 let setTimeTypeValue = 'SEC';
@@ -99,39 +93,6 @@ function delProfile() {
     alert("Deletion will be done");
 }
 
-/* function gProfile(profileNum) {
-    $('.right').show();
-    switch (profileNum) {
-        case 1:
-            addToProfileTable(1);
-            break;
-        case 2:
-            addToProfileTable(2);
-            break;
-        case 3:
-            addToProfileTable(3);
-            break;
-        case 4:
-            addToProfileTable(4);
-            break;
-        case 5:
-            addToProfileTable(5);
-            break;
-        case 6:
-            addToProfileTable(6);
-            break;
-        case 7:
-            addToProfileTable(7);
-            break;
-        case 8:
-            addToProfileTable(8);
-            break;
-        default:
-            document.getElementById('errorMsg').innerHTML = "Invalid Profile Entry";
-            $('.error').show();
-    }
-} */
-
 async function addToProfileTable(num) {
     let timeAdded = document.getElementById("addTime" + num).value;
     let powerAdded = document.getElementById("addPower" + num).value;
@@ -162,8 +123,6 @@ async function addToProfileTable(num) {
             //td2.textContent = timePowerData[i].power;
             td2.textContent = timeAdded;
             timeTotal += parseInt(td2.textContent);
-
-            console.log(timeTotal);
             r1.appendChild(td2);
 
             let td3 = document.createElement('td');
@@ -174,6 +133,7 @@ async function addToProfileTable(num) {
 
             dataTable.appendChild(r1);
             setRowNo++;
+
             $(function() {
                 $("#jsonTable" + num).sortable({
                     items: 'tr:not(tr:first-child)',
@@ -283,9 +243,27 @@ function controlForTime() {
     }
 }
 
-async function getRepeatCount() {
+function controlForTable() {
+    let tableRowLength = dataTable.rows.length;
+    console.log("table row length", tableRowLength);
+    for (let i = 1; i < tableRowLength; i++) {
+        for (let j = 0; j < 3; j++) {
+            var tableValue = dataTable.rows[i].cells[j].innerHTML;
+            setTable = setTable + tableValue + ":";
+        }
+        setTable += "#";
+    }
+}
+
+async function setRepeatCount() {
     let repeat = document.getElementById("repeatCount").value;
-    setRepeatCount = repeat;
+    if (repeat < 0 || repeat > 12) {
+        document.getElementById('errorMsg').innerHTML = "Repeat must be between 0-12";
+        $('.error').show();
+    } else {
+        $('.error').hide();
+        setRepeat = repeat;
+    }
 }
 
 function getMethod() {
@@ -300,6 +278,7 @@ function getNextProfile() {
 
 function submitResult() {
     controlForTime();
+    controlForTable();
     progress(timeTotal, $('#progressBar' + profileNum));
     result = '#AS';
     result = result.concat(setSwitchValue);
@@ -307,7 +286,9 @@ function submitResult() {
     result = result.concat(setProfileNum);
     result = result.concat('#ROW');
     result = result.concat(setRowNo - 1);
-    result = result.concat('#B');
+    result = result.concat('#DATA');
+    result = result.concat(setTable);
+    result = result.concat('B');
     result = result.concat(setBeginTime);
     result = result.concat('#E');
     result = result.concat(setEndTime);
@@ -316,7 +297,7 @@ function submitResult() {
     result = result.concat('#NP');
     result = result.concat(setNextProfile);
     result = result.concat('#R');
-    result = result.concat(setRepeatCount);
+    result = result.concat(setRepeat);
     result = result.concat('#');
     result = result.concat(setTimeTypeValue);
     console.log(result);
