@@ -57,9 +57,12 @@
                 </br>
                 <div id="Profile1" class="tabcontent">
                     <div>
-                        <label for="rowNumber1"> Row Number </label>
-                        <input type="text" id="rowNumber1">
-                        <input type=button onclick="gProfile(1)" value="Ok">
+                        <label for="addTime1"> Add Time </label>
+                        <input type="number" id="addTime1" min="0" max="60">
+                        <label for="addPower1"> Add Power </label>
+                        <input type="number" id="addPower1" min="0" max="5">
+                        <input type=button onclick="addToProfileTable(1)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(1)" value="Del">
                     </div>
                     <div id="chartData">
                         <table id="jsonTable1">
@@ -72,9 +75,12 @@
 
                 <div id="Profile2" class="tabcontent">
                     <div>
-                        <label for="rowNumber2"> Row Number </label>
-                        <input type="text" id="rowNumber2">
-                        <input type=button onclick="gProfile(2)" value="Ok">
+                        <label for="addTime2"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime2" required/>
+                        <label for="addPower2"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower2" required/>
+                        <input type=button onclick="addToProfileTable(2)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(2)" value="Del">
                     </div>
                     <div id="chartData">
                         <table id="jsonTable2">
@@ -87,9 +93,12 @@
 
                 <div id="Profile3" class="tabcontent">
                     <div>
-                        <label for="rowNumber3"> Row Number </label>
-                        <input type="text" id="rowNumber3">
-                        <input type=button onclick="gProfile(3)" value="Ok">
+                        <label for="addTime3"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime3" required/>
+                        <label for="addPower3"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower3" required/>
+                        <input type=button onclick="addToProfileTable(3)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(3)" value="Del">
                     </div>
                     <div id="chartData">
                         <table id="jsonTable3">
@@ -102,9 +111,12 @@
 
                 <div id="Profile4" class="tabcontent">
                     <div>
-                        <label for="rowNumber4"> Row Number </label>
-                        <input type="text" id="rowNumber4">
-                        <input type=button onclick="gProfile(4)" value="Ok">
+                        <label for="addTime4"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime4" required/>
+                        <label for="addPower4"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower4" required/>
+                        <input type=button onclick="addToProfileTable(4)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(4)" value="Del">
                     </div>
                     <div id="chartData">
                         <table id="jsonTable4">
@@ -117,64 +129,77 @@
 
                 <div id="Profile5" class="tabcontent">
                     <div>
-                        <label for="rowNumber5"> Row Number </label>
-                        <input type="text" id="rowNumber5">
-                        <input type=button onclick="gProfile(5)" value="Ok">
+                        <label for="addTime5"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime5" required/>
+                        <label for="addPower5"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower5" required/>
+                        <input type=button onclick="addToProfileTable(5)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(5)" value="Del">
                     </div>
                     <div id="chartData">
                         <table id="jsonTable5">
                         </table>
                     </div>
-                    <<div class="progressBar" id="progressBar5">
+                    <div class="progressBar" id="progressBar5">
                         <div class="bar"></div>
+                    </div>
                 </div>
-        </div>
 
-        <div id="Profile6" class="tabcontent">
-            <div>
-                <label for="rowNumber6"> Row Number </label>
-                <input type="text" id="rowNumber6">
-                <input type=button onclick="gProfile(6)" value="Ok">
-            </div>
-            <div id="chartData">
-                <table id="jsonTable6">
-                </table>
-            </div>
-            <div class="progressBar" id="progressBar6">
-                <div class="bar"></div>
-            </div>
-        </div>
+                <div id="Profile6" class="tabcontent">
+                    <div>
+                        <label for="addTime6"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime6" required/>
+                        <label for="addPower6"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower6" required/>
+                        <input type=button onclick="addToProfileTable(6)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(6)" value="Del">
+                    </div>
+                    <div id="chartData">
+                        <table id="jsonTable6">
+                        </table>
+                    </div>
+                    <div class="progressBar" id="progressBar6">
+                        <div class="bar"></div>
+                    </div>
+                </div>
 
-        <div id="Profile7" class="tabcontent">
-            <div>
-                <label for="rowNumber7"> Row Number </label>
-                <input type="text" id="rowNumber7">
-                <input type=button onclick="gProfile(7)" value="Ok">
-            </div>
-            <div id="chartData">
-                <table id="jsonTable7">
-                </table>
-            </div>
-            <div class="progressBar" id="progressBar7">
-                <div class="bar"></div>
-            </div>
-        </div>
+                <div id="Profile7" class="tabcontent">
+                    <div>
+                        <label for="addTime7"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime7" required />
+                        <label for="addPower7"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower7" required/>
+                        <input type=button onclick="addToProfileTable(7)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(7)" value="Del">
 
-        <div id="Profile8" class="tabcontent">
-            <div>
-                <label for="rowNumber8"> Row Number </label>
-                <input type="text" id="rowNumber8">
-                <input type=button onclick="gProfile(8)" value="Ok">
-            </div>
-            <div id="chartData">
-                <table id="jsonTable8">
-                </table>
-            </div>
-            <div class="progressBar" id="progressBar8">
-                <div class="bar"></div>
-            </div>
-        </div>
-        </form>
+                    </div>
+                    <div id="chartData">
+                        <table id="jsonTable7">
+                        </table>
+                    </div>
+                    <div class="progressBar" id="progressBar7">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div id="Profile8" class="tabcontent">
+                    <div>
+                        <label for="addTime8"> Add Time </label>
+                        <input type="text" value="0-60" onblur="if(this.value=='')this.value='0-60';" onfocus="if(this.value=='0-60')this.value='';" id="addTime8" required />
+                        <label for="addPower8"> Add Power </label>
+                        <input type="text" value="0-5" onblur="if(this.value=='')this.value='0-5';" onfocus="if(this.value=='0-5')this.value='';" id="addPower8" required />
+                        <input type=button onclick="addToProfileTable(8)" value="Add">
+                        <input type=button onclick="deleteFromProfileTable(8)" value="Del">
+                    </div>
+                    <div id="chartData">
+                        <table id="jsonTable8">
+                        </table>
+                    </div>
+                    <div class="progressBar" id="progressBar8">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="column right">
             <form id="my-form">
@@ -183,9 +208,9 @@
                 <h2>Profile Begin-End Time </h2>
                 </br>
                 <label for="begin">Begin Time </label>
-                <input type="text" id="begin" value="00.00" onchange="setForBegin()">
+                <input type="time" id="begin" min="00:00" max="23:59" onchange="setForBegin()" required>
                 <label for="end">End Time </label>
-                <input type="text" id="end" value="00.00" onchange="setForEnd()">
+                <input type="time" id="end" min="00:00" max="23:59" onchange="setForEnd()" required>
                 </br>
                 </br>
                 </br>
@@ -249,7 +274,7 @@
                 </br>
                 <div>
                     <label for="repeatCount">Repeat Count </label>
-                    <input type="text" id="repeatCount">
+                    <input type="number" id="repeatCount" min="0" max="12">
                     <input type=button onclick="getRepeatCount()" value="Ok">
                 </div>
         </div>
